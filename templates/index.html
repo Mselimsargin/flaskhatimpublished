@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icons/favicon.ico') }}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animate/animate.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/css-hamburgers/hamburgers.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/animsition/css/animsition.min.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/select2/select2.min.cs') }}s">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.css') }}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/util.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+<!--===============================================================================================-->
+</head>
+<body>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form" action="/add" method="POST">
+				<div class="wrap-input100 input100-select">
+					 
+					<label style="color: red;" for="select1">MINTIKA</label>
+					<div>
+						<select onchange='kindofStudentsChange(this.value)' class="selection-2" name="service1" id="select1" >
+							<option value=""> Please Select </option>
+                            <option value="GAUTENG"> GAUTENG </option>
+          					<option value="MPUMALANGA ve NORTHWEST"> MPUMALANGA </option>
+          					<option value="KWAZULU NATAL"> KWAZULU NATAL </option>
+          					<option value="LIMPOPO"> LIMPOPO </option>
+          					<option value="WESTERNCAPE"> WESTERNCAPE </option>
+         					<option value="GÜNEYDOĞU AFRİKA"> GÜNEYDOĞU AFRİKA </option>
+         					<option value="DOĞU AFRİKA"> DOĞU AFRİKA </option>
+          					<option value="KUZEYDOĞU AFRİKA"> KUZEYDOĞU AFRİKA </option>
+          					<option value="ORTA AFRİKA"> ORTA AFRİKA </option>
+          					<option value="ORTABATI AFRİKA"> ORTABATI AFRİKA </option>
+          					<option value="BATI AFRİKA"> BATI AFRİKA </option>
+          					<option value="LATİN AMERİKA"> LATİN AMERİKA </option>
+          					<option value="AFRİKA OFİS"> AFRİKA OFİS </option>
+          				</select>	
+					</div>	
+						
+                    
+					<div>
+						<label style="color: red;" for="kurum" >KURUM</label>
+					    <select class="selection-2" name="service" id="kurum">
+						    <option value="0">Kurum</option>
+					    </select>
+				    </div>
+
+					<div id="div2">
+						<label style="color: red;" for="select16"> HATİM TÜRÜ</label>
+						<select class="selection-2" name="service3" id="select16">
+							<option value=""> Please Select </option>
+							<option value="Kur&#x27;an- Kerim"> Kur&#x27;an- Kerim </option>
+							<option value="Yasin-i Şerif"> Yasin-i Şerif </option>
+							<option value="Tevdid Hatmi"> Tevdid Hatmi </option>
+						</select>
+					</div>	
+					
+							
+						
+					<div>
+						<label style="color: red;" for="input1"> HATİM ADETİ</label><br>
+						    <input name="service4" id="input1" type="text" placeholder="Örn 23" style="width:310px" size="310">
+					</div>		
+							
+				
+				
+				<div class="container-contact100-form-btn">
+					<div class="wrap-contact100-form-btn">
+						<div class="contact100-form-bgbtn"></div>
+						<button class="contact100-form-btn">
+							<span>
+								Submit
+								<i onClick="location.href='add';" value='submit' class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+				</div>
+				
+			</form>
+        </div>
+	</div>
+    <div id="dropDownSelect1"></div>
+
+				
+
+				
+
+		
+
+
+
+	
+
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/jquery/jquery-3.2.1.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/animsition/js/animsition.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/popper.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/select2/select2.min.js') }}"></script>
+	<script>
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect1')
+		});
+	</script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='vendor/daterangepicker/daterangepicker.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='vendor/countdowntime/countdowntime.js') }}"></script>
+<!--===============================================================================================-->
+	<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<script>
+	var kindofStudentsLists = new Array(13) 
+ kindofStudentsLists["empty"] = ["Kurum"]; 
+ kindofStudentsLists["GAUTENG"] = ["ARIFIN","BAKERTON KIZ","BEYERSPARK","BÜYÜK ÇAMLICA","ENDERUN TUTION CENTRE","EVİM PRESCHOOL","JOHANNESBURG OFIS","KASIMPASA","KÜÇÜK ÇAMLICA","PRETORIA VALIDE SULTAN KIZ KURSU","ROSHNEE ANAOKULU","SADIKLAR"]
+; 
+ kindofStudentsLists["MPUMALANGA ve NORTHWEST"] = ["MANZİNİ KURSU",
+"WITBANK",
+"ŞEHİT ŞÜKRÜ KOÇYİĞİT"
+];
+ kindofStudentsLists["KWAZULU NATAL"] = ["BLOEMFONTEIN",
+"CLARE HILLS HOUSE OF WISDOM",
+"DAMAK FRESH FOODS LESOTHO",
+"DAMAK PIETERMARITZBURG",
+"DURBAN BEDİA SULTAN KIZ",
+"DURBAN EVİM",
+"DURBAN SÜLEYMANİYE",
+"GROWING MINDS MONTESSORI SCHOOL",
+"HASAN DURUM",
+"ISIPINGO",
+"LESOTHO EVİM",
+"NANDSINDLELA",
+"SADABAD",
+"WESTVILLE KIZ KURSU"
+];
+ kindofStudentsLists["LIMPOPO"] = ["ENDERUN COLLEGE",
+"EVİM LOUİS TRİCHARDT ANAOKULU",
+"EVİM POLOKWANE ANAOKULU",
+"EVİM TZANEEN ANAOKULU",
+"LOUIS TRICHARDT",
+"NORTHERN STAR BOYS PRIMARY SCHOOL",
+"PHALABORWA",
+"POLOKWANE SÜLEYMANİYE",
+"TZANEEN",
+"TZANEEN ELEGANT GIRLS SCHOOL",
+"TZANEEN KIZ KURSU"
+];
+ kindofStudentsLists["WESTERNCAPE"] = ["EBUBEKIR EFENDI",
+"GÜLDEREN SULTAN KIZ",
+"MITCHELS PLAIN",
+"PORT ELIZABETH",
+"SARAYBURNU"
+];
+ kindofStudentsLists["GÜNEYDOĞU AFRİKA"] = ["AREA 9 KIZ",
+"BRIDGE ACADEMY",
+"EBUBEKİR SIDDIK KIZ",
+"KASUNGU",
+"LUSAKA (SÜLEYMANİYE)",
+"MAJUNGA (FATİH)",
+"MAKENİ BONAVENTURA",
+"MAPUTO ERKEK FETİH",
+"MAPUTO KIZ GÜLBAHÇE",
+"MAPUTO ORTAOKUL",
+"MBWATALİKA",
+"MUDİ",
+"MZUZU",
+"NDOLA",
+"NKHOTAKOTA",
+"SONGANİ",
+"STRATHAVEN",
+"SUMMIT HEIGHTS SCHOOLS 1",
+"SUMMIT HEIGHTS SCHOOLS 2",
+"TANA ERKEK YURDU"
+];
+ kindofStudentsLists["DOĞU AFRİKA"] = ["AHMET FURKAN (NYALI)",
+"DENİZ PRİMARY SCHOOL",
+"ECOLE MATERNELLE LA CİBLE",
+"EMİR ARİF AHMET DENİZOLGUN",
+"ENTEBBE",
+"GIHOSHA",
+"GOMA",
+"HURLINGHAM",
+"JITIMAI KIZ",
+"KAJJANSI SISA",
+"KAKUYİNİ",
+"KAMPALA",
+"KIGALI NYAKABANDA",
+"KOMOROS",
+"LALE BUSTANİ CHİLDREN ACADEMY",
+"LAMU",
+"LİTTLE GEMS ACADEMY GİKONDO",
+"LİTTLE GEMS ACADEMY KACYİRU",
+"MALİNDİ MAJENGO",
+"MBARARA",
+"MBEZI",
+"MUTANGA NORD",
+"MİKOCHENİ",
+"NAIVASHA",
+"NAKURU",
+"NAİROBİ KIZ",
+"NYALI KIZ",
+"PEARLS KIDS ACADEMY",
+"PEMBA",
+"SHANZU",
+"YUVAM PRESCHOOL",
+"ZEİMET KIZ"
+];
+ kindofStudentsLists["KUZEYDOĞU AFRİKA"] = ["ADAMA 1",
+"ADAMA 2",
+"ADAMA KIZ",
+"ADDIS ABABA 1",
+"ADDİS ABABA 2",
+"ADDİS ABABA KIZ",
+"ARTA",
+"BISHOFTU",
+"DIREDAWA",
+"GALKAYO",
+"HARAR 1",
+"HARAR 2",
+"HARAR 3",
+"HARGEISA",
+"HAWASSA",
+"JİGJİGA",
+"MEKELLE",
+"MOGADISHU",
+"SHASHAMANE",
+"YABELLO 1",
+"YABELLO 2",
+"YABELLO 3"
+];
+ kindofStudentsLists["ORTA AFRİKA"] = ["ABECHE",
+"BANGUI",
+"BRAZZAVİLLE",
+"DOUALA",
+"LIBREVILLE",
+"LIBREVILLE ANAOKULU",
+"MALABO",
+"MONGO ERKEK DAİMİ",
+"NDJAMENA KIZ KURSU",
+"NGOUNDERE",
+"YAOUNDE",
+"YAOUNDE KIZ KURSU",
+"ÇAD NDJAMENA"
+];
+ kindofStudentsLists["ORTABATI AFRİKA"] = ["ABUJA",
+"ABİDJAN",
+"ACRA",
+"BENİN SÜLEYMANİYE",
+"BOBIEL",
+"FIDJROSSE",
+"FİLDİŞİ TUNAHAN",
+"HAMİDİYE",
+"HAMİDİYE DAİMİ",
+"KADUNA",
+"KEGUE-LOME",
+"KUMASİ",
+"MALLAM",
+"MARADİ",
+"NIAMEY KIZ KURSU",
+"NIAMEY SEYYİD AHMED",
+"SANİYE ZEYNEP KIZ KURSU",
+"TAMALE",
+"TAMALE KIZ"
+];
+ kindofStudentsLists["BATI AFRİKA"] = ["AKDENİZ",
+"ASHABI SUFFE",
+"BAMAKO KIZ",
+"BOFFA-ABDÜLKADİR BAŞ",
+"DENİZ",
+"FANAY",
+"FATİH",
+"FERHAN SULTAN KIZ KURSU",
+"FERHATLAR",
+"FREE TOWN SÜLEYMANİYE",
+"GAMBİYA KIZ",
+"HASBAHÇE",
+"HİSAR",
+"KAMBANYA",
+"KANKAN SEYYİD AHMED",
+"KAYMAK HAFIZ",
+"KONAKRİ KIZ",
+"KONAKRİ SÜLEYMANİYE",
+"KURUSA ERKEK",
+"LAMBANYİ",
+"LES PETİTES PERLES DAKAR",
+"LES PETİTES PERLES THİES",
+"MORİTANYA HAFİZE SULTAN KIZ",
+"MORİTANYA SÜLEYMANİYE",
+"PİR",
+"SANDİARA",
+"SEBİKOTAN",
+"SEGOU-ARİFAN",
+"SENEGAL BEDİA SULTAN KIZ",
+"SEYYİD ARİF",
+"SEYYİD KAMİL",
+"ÇAMLICA OFİS"
+];
+ kindofStudentsLists["LATİN AMERİKA"] = ["AMAZONLAR",
+"BUENOS AIRES",
+"COLETORA DE ROSAS",
+"KARAKAS",
+"PANAMA",
+"SAO PAULO SÜLEYMANİYE",
+"ŞİLİ SANTİAGO"
+];
+ kindofStudentsLists["AFRİKA OFİS"] = ["DIVERSITY FARKLILIK DERNEĞİ",
+"HEDEF DERNEĞİ"
+];
+
+
+  
+  
+function kindofStudentsChange(selectObj) { 
+which=selectObj 
+cList = kindofStudentsLists[which]; 
+var cSelect = document.getElementById("kurum"); 
+var len=cSelect.options.length; 
+while (cSelect.options.length > 0)
+ { 
+cSelect.remove(0); 
+ } 
+ var newOption; 
+  
+ for (var i=0; i<cList.length; i++) { 
+ newOption = document.createElement("option"); 
+ newOption.value = cList[i];  
+ newOption.text=cList[i]; 
+ 
+ try { 
+ cSelect.add(newOption);   
+ } 
+ catch (e) { 
+ cSelect.appendChild(newOption); 
+ } 
+ } 
+ } 
+</script>
+
+</body>
+</html>
